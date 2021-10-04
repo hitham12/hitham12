@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +14,12 @@
     height: 100vh;
     width: 100vw;
 }
-
 .maincontainer {
     height: 100%;
     width: 100%;
     background: url(./CSS/images/minecraft.jpg) no-repeat center center/cover;
 
 }
-
 .btncontainer {
     height: 100vh;
     width: 100vw;
@@ -31,9 +28,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
   }
-  
      .btnbig, .btnsmall {
     display: inline-block;
     background-color: #6a6b6a;
@@ -43,7 +38,6 @@
     padding: 2em 20em;
     border-radius: 0.5em;
     transition: 0.1s;
-    
   }
   .return {
     grid-area: 1 / 1 / 1 / 1;
@@ -61,7 +55,6 @@
     -webkit-transition: 0.1s;
     box-shadow: 0 2px 3px #ccc;
   }
-
   .refresh {
     grid-area: 2 / 4 / 3 / 0;
     display: inline-block;
@@ -78,7 +71,6 @@
     -webkit-transition: 0.1s;
     transition: 0.1s;
   }
-
 .smallmapmain{
     height: 100%;
     width: 100%;
@@ -87,7 +79,6 @@
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr;
 }
-
 .storage , .storage2 {
     grid-area: 1 / 3 / 0 / 4;
     background: rgb(7, 7, 7);
@@ -96,9 +87,6 @@
     justify-content: space-around;
     align-items: center;
 }
-
-
-
 .bigmapmain{
     height: 100%;
     width: 100%;
@@ -107,17 +95,13 @@
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr;
 }
-
-
   .sidebar{
     grid-area: 0 / 0 / 0 / 0;
     background: rgb(247, 247, 247);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
-  }
-        
-
+  }    
   .smallmap {
       display: grid ;
       flex-direction: row;
@@ -126,8 +110,6 @@
       grid-template-columns: repeat(10,1fr);
       grid-template-rows: repeat(10,1fr);
   }
-
-
   .bigmap {
       width: 100%;
       height: 100%;
@@ -137,7 +119,6 @@
       grid-template-rows: repeat(15,1fr);
       grid-area: 1 / 2 / 2 / 3;  
   }
-
   .weaponscontainer, .weaponscontainer2{
     display: flex;
     flex-direction: row;
@@ -145,29 +126,22 @@
     flex-wrap: wrap;
     grid-area: 2 / 1 / 4 / 1; 
   }
-
   .weaponscontainer .img , .weaponscontainer2 .img {   
     border-radius: 200%;
-    width: 300%;
-    
+    width: 300%;  
   }
-  
   .weaponscontainer input, .weaponscontainer2 input {
       margin: 0.5%;
   }
-
   .weaponscontainer .axe, .axe2{
     background: url(./CSS/images/axe-png.png)no-repeat center center/70px 70px;
   }
-
   .weaponscontainer .Shovel, .Shovel2 {
     background: url(./CSS/images/Shovel-png.png) no-repeat center center/70px 70px ;
   }
-
   .weaponscontainer .pikaxe, .pikaxe2 { 
       background: url(./CSS/images/pikaxe-png.png)no-repeat center center/70px 70px ;
   }
-
 .wood, .wood2{
   background: url(./CSS/images/tree.png)no-repeat center center/cover;
 }
@@ -186,7 +160,6 @@
 .dirt, .dirt2{
   background: url(./CSS/images/dirt.png)no-repeat center center/cover;
 }
-
 .sizebox{
   width:20%;
   height:15%;
@@ -195,17 +168,16 @@
 font-weight: 700;
 }
 </style>
-
 <body>
-    <div class="maincontainer">
-        <div class="btncontainer">
-            <div class="btnsb">
+          <div class="maincontainer">
+            <div class="btncontainer">
+                <div class="btnsb">
                 <input class="btnsmall" type="button" value="Small Map">
                 <input class="btnbig" type="button" value="Big Map">
             </div>
         </div>
-    </div>
-    <div class="smallmapmain">
+         </div>
+            <div class="smallmapmain">
         <div class="sidebar">
             <input class="return" type="button" value="Main Game">
             <br><br>
@@ -225,8 +197,8 @@ font-weight: 700;
             <input type="button" class="sizebox grass" value="0">
             <input type="button" class="sizebox dirt" value="0">
         </div>
-    </div>
-    <div class="bigmapmain">
+           </div>
+           <div class="bigmapmain">
         <div class="sidebar">
             <input class="return" type="button" value="Main Game">
             <br><br>
@@ -236,10 +208,10 @@ font-weight: 700;
                 <input class="img axe2" type="button" value="">
                 <input class="img Shovel2" type="button" value="">
                 <input class="img pikaxe2" type="button" value="">
+              </div>
             </div>
-        </div>
-        <div class="bigmap"></div>
-        <div class="storage2">
+           <div class="bigmap"></div>
+           <div class="storage2">
             <input type="button" class="sizebox wood2" value="0">
             <input type="button" class="sizebox leaves2" value="0">
             <input type="button" class="sizebox dirt2" value="0">
@@ -248,7 +220,6 @@ font-weight: 700;
            
         </div>
     </div>
-
     <script>
         var Minecraft = {};
 let maincontainer = document.querySelector(`.maincontainer`),
@@ -403,13 +374,10 @@ function clickHandle(e) {
     this.setAttribute(`class`, `empty`);
     leavescounter.value++; 
   }
-
   if (this.getAttribute(`class`).includes(`rock`)&&selectedtool ===`pikaxe`){
     this.setAttribute(`class`, `empty`);
     rockcounter.value++; 
   }
-
-
   if (this.getAttribute(`class`).includes(`dirt`) &&selectedtool ===`shovel`){
     this.setAttribute(`class`, `empty`);
     dirtcounter.value++; 
@@ -426,13 +394,10 @@ function clickHandle(e) {
     this.setAttribute(`class`, `empty2`);
     leavescounter2.value++; 
   }
-
   if (this.getAttribute(`class`).includes(`rock`)&&selectedtool ===`pikaxe2`){
     this.setAttribute(`class`, `empty2`);
     rockcounter2.value++; 
   }
-
-
   if (this.getAttribute(`class`).includes(`dirt`) &&selectedtool ===`shovel2`){
     this.setAttribute(`class`, `empty2`);
     dirtcounter2.value++; 
@@ -441,7 +406,7 @@ function clickHandle(e) {
     this.setAttribute(`class`, `empty2`);
     grasscounter2.value++; 
   }
- 
+
   if (this.getAttribute(`class`).includes(`empty2`)||this.getAttribute(`class`).includes(`empty`)){
     if(adStore!==0){
       if(adStore.value>0){
@@ -464,7 +429,6 @@ function axePick() {
   weapons.children[0].style.outline="3px solid white";
   adStore=0;
 }
-
 function pikaxePick() {
   const weapons=document.querySelector(".weaponscontainer");
   [...weapons.children].map(val=>val.style.outline="none");
@@ -472,7 +436,6 @@ function pikaxePick() {
   weapons.children[2].style.outline="3px solid white"
   adStore=0;
 }
-
 function shovelPick() {
   const weapons=document.querySelector(".weaponscontainer");
   [...weapons.children].map(val=>val.style.outline="none");
@@ -492,7 +455,6 @@ function axePick2() {
   weapons.children[0].style.outline="3px solid white"
   adStore=0;
 }
-
 function pikaxePick2() {
   const weapons=document.querySelector(".weaponscontainer2");
   [...weapons.children].map(val=>val.style.outline="none");
@@ -500,7 +462,6 @@ function pikaxePick2() {
   weapons.children[2].style.outline="3px solid white"
   adStore=0;
 }
-
 function shovelPick2() {
   const weapons=document.querySelector(".weaponscontainer2");
   [...weapons.children].map(val=>val.style.outline="none");
@@ -521,8 +482,6 @@ dirtcounter2.addEventListener(`click`,chooseElement)
 function chooseElement(){
   adStore=this; 
 }
-
     </script>
 </body>
-
 </html>
